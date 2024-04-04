@@ -22,7 +22,7 @@ func main() {
 		ProdutoID: "Produto2",
 		QuantidadeDeProduto: 1,
 	},
-	fmt.Printf(`%+v`, ListaDeDesejos)
+	//fmt.Printf(`%+v`, ListaDeDesejos)
 }
 //InfosProduto: map[string]int{
 //"id-blusa-roxa:1,"
