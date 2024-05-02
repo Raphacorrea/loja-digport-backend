@@ -5,7 +5,6 @@ type Carrinho struct {
 	UserID       string
 	ID           string
 	InfosProduto []InfosProduto
-	//InfosProduto map[string]int
 	ValorTotal      float64
 	QuantidadeTotal int
 }
