@@ -1,30 +1,27 @@
 package main
 
 import (
+	"database/sql"
 	"fmt"
+	"log"
 
-	"github.com/Raphacorrea/loja-digport-backend/model"
+	_ "github.com/lib/pq"
 )
 
 func main() {
-	fmt.Println("Hello, world!")
+	//StartServer()
+	//fmt.Printf("Esse é o catálogo da loja listaProdutos:%+v", estoque())
+	db := ConectaBancoDados()
+	fmt.Println("Bem Vindos à Loja DigPort!")
 
-	ListaDeDesejos := model.Carrinho{
-		ID:     "ID do carrinho",
-		UserID: "ID do Usuario",
-		InfosProduto: []model.InfosProduto{
-
-			ProdutoID:           "produto1",
-			QuantidadeDeProduto: 3,
-		},
-		{
-			ProdutoID:           "Produto2",
-			QuantidadeDeProduto: 1,
-		},
-		//fmt.Printf(`%+v`, ListaDeDesejos)
-	}
+	defer db.Close()
 }
 
-//InfosProduto: map[string]int{
-//"id-blusa-roxa:1,"
-//""id-blusa-rosa:2
+func ConectaBancoDados() *sql.DB {
+	connStr := "user=postgres dbname=digport_loja password=digport host=localhost sslmode=disable"
+	db, err := sql.Open("postgres", connStr)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return db
+}

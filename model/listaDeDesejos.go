@@ -1,4 +1,4 @@
-package model
+package main
 
 type ListaDeDesejos struct {
 	UserID    string

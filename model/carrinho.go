@@ -1,4 +1,4 @@
-package model
+package main
 
 type Carrinho struct {
 	ProdutoID    []string

@@ -1,4 +1,4 @@
-package model
+package main
 
 type Usuario struct {
 	Nome  string
@@ -6,12 +6,3 @@ type Usuario struct {
 	Email string
 	senha string
 }
-
-/*func (u *Usuario) GeraHashDeSenha(senha string) error{
-	hash, err:= bcrypt.GenerateFromPassword([]byte(senha), bcrypt.DefaultC
-if err!=nil{
-	return err
-}
-u.senha=string(hash)
-return nil
-}*/
