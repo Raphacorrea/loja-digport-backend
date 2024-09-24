@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "digport-academy",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
