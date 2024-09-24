@@ -1,54 +1,40 @@
-package main
+package model
 
-import (
-	"errors"
+import "github.com/grasieliw/loja-digport-backend/model"
 
-	"github.com/Raphacorrea/loja-digport-backend/model"
-)
+//import "github.com/Raphacorrea/loja-digport-backend/model"
 
-var Estoque []model.Produto = []model.Produto{}
-
-func produtosPorNome(nome string) []model.Produto {
-	resultado := []model.Produto{}
-
-	for _, produto := range produtos {
-		if produto.Nome == nome {
-			resultado = append(resultado, produto)
-		}
-	}
-
-	return resultado
-}
-func adicionaProduto(produtoNovo model.Produto) error {
-	for _, produto := range produtos {
-		if produtoNovo.ID == produto.ID {
-			return errors.New("o id é inválido")
-		}
-	}
-	produtos = append(produtos, produtoNovo)
-	return nil
-}
-
-func criaEstoque() []model.Produto {
+func criaEstoque() {
 	produtos := []model.Produto{
 		{
-			Nome:       "Calça tradicional",
-			Descricao:  "Calça Jeans",
-			Categoria:  "calça",
-			ID:         "a1",
-			Valor:      100.00,
-			Quantidade: 1,
-			Imagem:     "calça.jpg",
+			ID:                  "a1",
+			Nome:                "Calça tradicional",
+			Preco:               100.00,
+			Descricao:           "Calça Jeans Azul Escuro",
+			Categoria:           "Calça",
+			Imagem:              "calça.jpg",
+			QuantidadeEmEstoque: 5,
 		},
 		{
-			Nome:       "Blusa verão",
-			Descricao:  "Blusa verão manga curta",
-			Categoria:  "camisa",
-			ID:         "a2",
-			Valor:      70.00,
-			Quantidade: 1,
-			Imagem:     "blusa.jpg",
+			ID:                  "a2",
+			Nome:                "Blusa verão",
+			Preço:               70.00,
+			Descricao:           "Blusa verão manga curta",
+			Categoria:           "camisa",
+			Imagem:              "blusa.jpg",
+			QuantidadeEmEstoque: 1,
 		},
 	}
-	return produtos
+
+	/*
+		type Estoque map[string]model.Produto
+		qtdInicialProdutos :=
+		estoque := make(map[string]model.Produto, qtdInicialProdutos)
+		estoque := make(Estoque, qtdInicialProdutos)
+		estoque2["1"] = model.Produto{ID: "1", Nome: "Revista Recreio", Preco: 19.90, Descricao: "Revista Recreio", Imagem: "revista.jpg"}
+	*/
+
+	estoque := make([]model.Produto, len(produtos))
+
+	return estoque
 }

@@ -5,11 +5,12 @@ import (
 	"fmt"
 	"log"
 
-	_ "github.com/lib/pq"
+	"github.com/Raphacorrea/loja-digport-backend/db"
 )
 
 func main() {
-	//StartServer()
+	db.InitDB()
+	StartServer()
 	//fmt.Printf("Esse é o catálogo da loja listaProdutos:%+v", estoque())
 	db := ConectaBancoDados()
 	fmt.Println("Bem Vindos à Loja DigPort!")
