@@ -1,10 +1,10 @@
-package controllers
+package controller
 
 import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/Raphacorrea/loja-digport-backend/model"
+	"github.com/Raphacorrea/loja-digport-backend/tree/main/model/model"
 )
 
 func CriaUsuarioHandler(w http.ResponseWriter, r *http.Request) {
