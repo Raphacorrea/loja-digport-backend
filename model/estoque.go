@@ -1,9 +1,14 @@
 package model
 
+<<<<<<< HEAD
 import "github.com/grasieliw/loja-digport-backend/model"
 
 //import "github.com/Raphacorrea/loja-digport-backend/model"
 
+=======
+//import "github.com/Raphacorrea/loja-digport-backend/model"
+
+>>>>>>> 207ffc60e944534e18651511c17efab8c3530b40
 func criaEstoque() {
 	produtos := []model.Produto{
 		{

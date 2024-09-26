@@ -27,7 +27,6 @@ var quantidade int
 func BuscaTodosProdutos() []Produto {
 
 	db := db.ConectaBancoDados()
-
 	resultado, err := db.Query("SELECT * FROM produtos")
 
 	if err != nil {
